@@ -131,3 +131,11 @@ tensorboard_html_binary(
     output_path = "/index.html",
     deps = [":standalone_lib"],
 )
+
+tensorboard_html_binary(
+    name = "blocks",
+    compile = True,  # Run Closure Compiler
+    input_path = "/standalone.html",
+    output_path = "/index.html",
+    deps = [":standalone_lib"],
+)
