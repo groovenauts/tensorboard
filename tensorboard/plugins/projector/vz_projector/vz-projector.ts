@@ -79,6 +79,8 @@ export class Projector extends ProjectorPolymer implements
   private analyticsLogger: AnalyticsLogger;
   private eventLogging: boolean;
   private pageViewLogging: boolean;
+  private leftPane: HTMLDivElement;
+      
 
   ready() {
     super.ready();
@@ -104,6 +106,7 @@ export class Projector extends ProjectorPolymer implements
     this.neighborsOfFirstPoint = [];
     this.editMode = false;
 
+    this.leftPane = this.$['left-pane'] as HTMLDivElement;
     this.dataPanel = this.$['data-panel'] as DataPanel;
     this.inspectorPanel = this.$['inspector-panel'] as InspectorPanel;
     this.projectionsPanel = this.$['projections-panel'] as ProjectionsPanel;
@@ -491,6 +494,11 @@ export class Projector extends ProjectorPolymer implements
       this.projectorScatterPlotAdapter.set3DLabelMode(this.get3DLabelMode());
     });
 
+    // const leftPaneTrigger = this.$$('#left-pane-trigger');
+    // leftPaneTrigger.addEventListener('click', () => {
+    //   console.log(this.leftPane)
+    // });
+
     window.addEventListener('resize', () => {
       this.projectorScatterPlotAdapter.resize();
     });
@@ -565,6 +573,14 @@ export class Projector extends ProjectorPolymer implements
 
   notifyProjectionPositionsUpdated() {
     this.projectorScatterPlotAdapter.notifyProjectionPositionsUpdated();
+  }
+
+  _expandToggleLeftPane() {
+    if (this.leftPane.style.display == 'none') {
+      this.leftPane.style.display = 'block';
+    } else {
+      this.leftPane.style.display = 'none';
+    }
   }
 
   /**
