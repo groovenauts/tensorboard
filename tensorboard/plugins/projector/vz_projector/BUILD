@@ -114,6 +114,7 @@ tf_web_library(
     srcs = [
         "standalone.html",
         "standalone_projector_config.json",
+        "favicon_blocks2.ico",
     ],
     path = "/",
     deps = [

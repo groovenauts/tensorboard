@@ -654,6 +654,10 @@ export class Projector extends ProjectorPolymer implements
     }
     this.notifySelectionChanged(state.selectedPoints);
   }
+
+  _openHelp3dDialog() {
+    this.$.help3dDialog.open()
+  }
 }
 
 customElements.define(Projector.prototype.is, Projector);

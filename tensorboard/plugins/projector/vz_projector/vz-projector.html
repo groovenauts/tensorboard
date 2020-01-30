@@ -329,8 +329,8 @@ limitations under the License.
         <svg id="selector"></svg>
       </div>
       <vz-projector-metadata-card id="metadata-card"></vz-projector-metadata-card>
-      <paper-icon-button raised onclick="help3dDialog.open()" icon="help-outline" id="help-3d-icon"></paper-icon-button>
-      <paper-tooltip animation-delay="0" for="help-3d-icon">Help with interaction controls.</paper-tooltip>
+      <paper-icon-button raised on-tap="_openHelp3dDialog" icon="help-outline" id="help-3d-icon"></paper-icon-button>
+      <paper-tooltip animation-delay="0" for="help-3d-icon" position="right">Help with interaction controls.</paper-tooltip>
       <paper-dialog id="help3dDialog" with-backdrop>
         <div class="main" dialog-confirm autofocus>
           <h3>3D controls</h3>
